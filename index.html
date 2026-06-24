@@ -60,6 +60,20 @@
     .ya-bigvid:hover .ya-playbtn { transform:translate(-50%,-50%) scale(1.1); }
     @media (prefers-reduced-motion:reduce){ *{ animation-duration:.01ms !important; } }
     @media (max-width:760px){ .hero-illust{ width:min(72vw,320px) !important; margin:0 auto; } .ya-first-grid{ grid-template-columns:1fr !important; } .profile-otter{ display:none; } .hero-badge{ display:none; } p, h1, h2, h3, span, div, a { word-break:keep-all; overflow-wrap:break-word; } }
+    @media (max-width:640px){
+      .ya-burger{ display:flex !important; }
+      .ya-nav{
+        position:absolute; top:100%; right:clamp(12px,4vw,24px); min-width:170px;
+        flex-direction:column; align-items:stretch !important; gap:2px !important;
+        padding:10px; border-radius:14px;
+        background:rgba(12,22,12,.96); border:1px solid rgba(168,224,99,.22);
+        box-shadow:0 18px 40px rgba(0,0,0,.5); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+        display:none !important;
+      }
+      header[data-open="1"] .ya-nav{ display:flex !important; }
+      .ya-nav a{ padding:10px 12px !important; border-radius:9px; }
+      .ya-nav a:active{ background:rgba(168,224,99,.14); }
+    }
   </style>
 </helmet>
 
@@ -121,12 +135,17 @@
   </div>
 
   <!-- ============ NAV ============ -->
-  <header style="position:sticky; top:0; z-index:30; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); background:rgba(10,18,10,.62); border-bottom:1px solid rgba(168,224,99,.16);">
-    <div style="max-width:1180px; margin:0 auto; padding:14px clamp(16px,4vw,40px); display:flex; align-items:center; justify-content:space-between; gap:16px;">
+  <header data-open="{{ menuOpen }}" style="position:sticky; top:0; z-index:30; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); background:rgba(10,18,10,.62); border-bottom:1px solid rgba(168,224,99,.16);">
+    <div class="ya-head" style="max-width:1180px; margin:0 auto; padding:14px clamp(16px,4vw,40px); display:flex; align-items:center; justify-content:space-between; gap:16px; position:relative;">
       <div style="display:flex; align-items:center; gap:11px;">
         <img src="assets/yae_logo.png" alt="四ッ谷やえ" style="height:42px; width:auto; display:block; filter:drop-shadow(0 1px 4px rgba(0,0,0,.35));">
       </div>
-      <nav style="display:flex; align-items:center; gap:clamp(10px,2.2vw,26px); font-size:clamp(12px,1.5vw,14px); color:#cfeab4; letter-spacing:.08em;">
+      <button class="ya-burger" onClick="{{ toggleMenu }}" aria-label="メニュー" style="display:none; align-items:center; justify-content:center; flex-direction:column; gap:4px; width:42px; height:42px; padding:0; border:1px solid rgba(168,224,99,.3); border-radius:11px; background:rgba(168,224,99,.08); cursor:pointer;">
+        <span style="width:18px; height:2px; background:#cfeab4; border-radius:2px;"></span>
+        <span style="width:18px; height:2px; background:#cfeab4; border-radius:2px;"></span>
+        <span style="width:18px; height:2px; background:#cfeab4; border-radius:2px;"></span>
+      </button>
+      <nav class="ya-nav" onClick="{{ closeMenu }}" style="display:flex; align-items:center; gap:clamp(10px,2.2vw,26px); font-size:clamp(12px,1.5vw,14px); color:#cfeab4; letter-spacing:.08em;">
         <a href="#profile" style="padding:4px 2px;">PROFILE</a>
         <a href="#join" style="padding:4px 2px;">入信</a>
         <a href="#quotes" style="padding:4px 2px;">語録</a>
@@ -429,7 +448,10 @@ class Component extends DCLogic {
 
   // ▲▲▲ 予備の予定はここまで。下はさわらなくてOKだ ▲▲▲
 
-  state = { pct: 0, done: false, qi: 0, heroIdx: 0, pats: 0, joy: false, sheet: null };
+  state = { pct: 0, done: false, qi: 0, heroIdx: 0, pats: 0, joy: false, sheet: null, menuOpen: false };
+
+  toggleMenu = () => this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.state.menuOpen && this.setState({ menuOpen: false });
 
   // CSV1行をマスに分解する（"…" 内のカンマも扱う）
   parseCsvLine(line) {
@@ -561,6 +583,9 @@ class Component extends DCLogic {
     for (const m of this.PAT_MILESTONES) { if (this.state.pats >= m.n) patMsg = m.msg; }
     return {
       schedule: this.state.sheet || this.SCHEDULE,
+      menuOpen: this.state.menuOpen ? '1' : '0',
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
       heroLine: this.HERO_LINES[this.state.heroIdx],
       heroImg: this.state.joy ? 'assets/yae_joy.png' : 'assets/yae_angry.png',
       joyOpacity: this.state.joy ? 1 : 0,
