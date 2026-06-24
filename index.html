@@ -79,7 +79,6 @@
 
 <div style="position:relative; min-height:100vh; font-family:'Zen Maru Gothic',sans-serif; color:#eafbe0; overflow-x:clip; background:linear-gradient(180deg,#0a140a 0%, #0f2110 38%, #14301a 70%, #0c1c0d 100%);">
 
-  <!-- ============ LOADING SCREEN ============ -->
   <div style="{{ loadingStyle }}">
     <img src="assets/green_otter.png" alt="四ッ谷やえ マスコット" style="width:128px; filter:drop-shadow(0 0 26px rgba(127,206,90,.5)); animation:yaFloatMascot 2.6s ease-in-out infinite;">
     <div style="font-family:'Mochiy Pop One',sans-serif; font-size:26px; color:#a8e063; letter-spacing:.14em; line-height:1.5; padding:2px 0; margin-top:22px;">四ッ谷やえ</div>
@@ -90,19 +89,15 @@
     <div style="font-size:12px; color:#6f9f5a; margin-top:6px; font-family:'Yomogi',cursive;">カワウソの民を集めてるだあ…<svg viewBox="0 0 24 24" style="width:1.05em;height:1.05em;vertical-align:-.18em;display:inline-block;fill:currentColor;margin-left:3px"><ellipse cx="6" cy="11" rx="2" ry="2.6"/><ellipse cx="12" cy="8.5" rx="2.2" ry="3"/><ellipse cx="18" cy="11" rx="2" ry="2.6"/><path d="M12 12c-3 0-5 2.2-5 4.6 0 1.7 1.4 2.4 3 2.4 1 0 1.4-.4 2-.4s1 .4 2 .4c1.6 0 3-.7 3-2.4 0-2.4-2-4.6-5-4.6z"/></svg></div>
   </div>
 
-  <!-- ============ UNDERWATER BACKGROUND ============ -->
   <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; z-index:0; overflow:hidden;">
-    <!-- light rays -->
     <div style="position:absolute; top:-10%; left:18%; width:90px; height:130%; background:linear-gradient(180deg,rgba(168,224,99,.16),rgba(168,224,99,0)); filter:blur(6px); transform-origin:top; animation:yaRays 11s ease-in-out infinite;"></div>
     <div style="position:absolute; top:-10%; left:46%; width:140px; height:130%; background:linear-gradient(180deg,rgba(180,235,110,.2),rgba(180,235,110,0)); filter:blur(8px); transform-origin:top; animation:yaRays 14s ease-in-out infinite 1s;"></div>
     <div style="position:absolute; top:-10%; left:70%; width:80px; height:130%; background:linear-gradient(180deg,rgba(168,224,99,.14),rgba(168,224,99,0)); filter:blur(6px); transform-origin:top; animation:yaRays 13s ease-in-out infinite .5s;"></div>
 
-    <!-- swimming creatures: outer div = travel, inner = facing -->
     <div style="position:absolute; top:30%; left:0; animation:yaSwimR 26s linear infinite;"><div style="transform:scaleX(-1);"><div style="animation:yaBobY 4s ease-in-out infinite;"><svg width="46" height="26" viewBox="0 0 46 26" fill="none" stroke="#b6e88a" stroke-width="1.6" style="opacity:.7;"><path d="M4 13 C12 4, 30 4, 38 13 C30 22, 12 22, 4 13Z"/><path d="M38 13 l7 -6 v12 z"/><circle cx="12" cy="11" r="1" fill="#b6e88a"/></svg></div></div></div>
     <div style="position:absolute; top:54%; left:0; animation:yaSwimL 34s linear infinite;"><div style="animation:yaBobY 5s ease-in-out infinite;"><svg width="40" height="22" viewBox="0 0 46 26" fill="none" stroke="#8fcf66" stroke-width="1.6" style="opacity:.55;"><path d="M4 13 C12 4, 30 4, 38 13 C30 22, 12 22, 4 13Z"/><path d="M38 13 l7 -6 v12 z"/><circle cx="12" cy="11" r="1" fill="#8fcf66"/></svg></div></div>
     <div style="position:absolute; top:72%; left:0; animation:yaSwimR 30s linear infinite 4s;"><div style="transform:scaleX(-1);"><div style="animation:yaBobY 4.6s ease-in-out infinite;"><svg width="34" height="19" viewBox="0 0 46 26" fill="none" stroke="#a8e063" stroke-width="1.6" style="opacity:.5;"><path d="M4 13 C12 4, 30 4, 38 13 C30 22, 12 22, 4 13Z"/><path d="M38 13 l7 -6 v12 z"/></svg></div></div></div>
 
-    <!-- otters drifting -->
     <div style="position:absolute; top:42%; left:0; animation:yaSwimL 48s linear infinite 2s;"><div style="animation:yaBobY 6s ease-in-out infinite; opacity:.32;"><img src="assets/green_otter.png" alt="" style="width:120px; filter:blur(.4px);"></div></div>
     <div style="position:absolute; top:80%; left:0; animation:yaSwimR 60s linear infinite 8s;"><div style="transform:scaleX(-1);"><div style="animation:yaBobY 7s ease-in-out infinite; opacity:.26;"><img src="assets/green_otter.png" alt="" style="width:150px; filter:blur(.5px);"></div></div></div>
     <div style="position:absolute; top:18%; left:0; animation:yaSwimR 54s linear infinite 14s;"><div style="transform:scaleX(-1);"><div style="animation:yaBobY 6.5s ease-in-out infinite; opacity:.22;"><img src="assets/green_otter.png" alt="" style="width:104px; filter:blur(.4px);"></div></div></div>
@@ -113,18 +108,15 @@
     <div style="position:absolute; top:90%; left:0; animation:yaSwimL 58s linear infinite 26s;"><div style="animation:yaBobY 6.8s ease-in-out infinite; opacity:.24;"><img src="assets/green_otter.png" alt="" style="width:118px; filter:blur(.45px);"></div></div>
     <div style="position:absolute; top:24%; left:0; animation:yaSwimL 64s linear infinite 30s;"><div style="animation:yaBobY 7.8s ease-in-out infinite; opacity:.16;"><img src="assets/green_otter.png" alt="" style="width:144px; filter:blur(.55px);"></div></div>
 
-    <!-- more fish -->
     <div style="position:absolute; top:12%; left:0; animation:yaSwimL 40s linear infinite 6s;"><div style="animation:yaBobY 4.4s ease-in-out infinite;"><svg width="30" height="17" viewBox="0 0 46 26" fill="none" stroke="#b6e88a" stroke-width="1.6" style="opacity:.5;"><path d="M4 13 C12 4, 30 4, 38 13 C30 22, 12 22, 4 13Z"/><path d="M38 13 l7 -6 v12 z"/><circle cx="12" cy="11" r="1" fill="#b6e88a"/></svg></div></div>
     <div style="position:absolute; top:48%; left:0; animation:yaSwimR 36s linear infinite 11s;"><div style="transform:scaleX(-1);"><div style="animation:yaBobY 5.2s ease-in-out infinite;"><svg width="38" height="22" viewBox="0 0 46 26" fill="none" stroke="#8fcf66" stroke-width="1.6" style="opacity:.6;"><path d="M4 13 C12 4, 30 4, 38 13 C30 22, 12 22, 4 13Z"/><path d="M38 13 l7 -6 v12 z"/><circle cx="12" cy="11" r="1" fill="#8fcf66"/></svg></div></div></div>
     <div style="position:absolute; top:88%; left:0; animation:yaSwimL 44s linear infinite 17s;"><div style="animation:yaBobY 4.8s ease-in-out infinite;"><svg width="32" height="18" viewBox="0 0 46 26" fill="none" stroke="#a8e063" stroke-width="1.6" style="opacity:.45;"><path d="M4 13 C12 4, 30 4, 38 13 C30 22, 12 22, 4 13Z"/><path d="M38 13 l7 -6 v12 z"/></svg></div></div>
 
-    <!-- bubbles -->
     <div style="position:absolute; left:14%; bottom:-2%; width:7px; height:7px; border-radius:50%; background:rgba(180,235,110,.5); animation:yaRise 14s ease-in-out infinite;"></div>
     <div style="position:absolute; left:30%; bottom:-2%; width:5px; height:5px; border-radius:50%; background:rgba(180,235,110,.4); animation:yaRise 17s ease-in-out infinite 3s;"></div>
     <div style="position:absolute; left:62%; bottom:-2%; width:6px; height:6px; border-radius:50%; background:rgba(180,235,110,.45); animation:yaRise 15s ease-in-out infinite 6s;"></div>
     <div style="position:absolute; left:82%; bottom:-2%; width:5px; height:5px; border-radius:50%; background:rgba(180,235,110,.4); animation:yaRise 18s ease-in-out infinite 2s;"></div>
 
-    <!-- seaweed -->
     <svg style="position:absolute; bottom:0; left:2%; width:40px; height:200px; transform-origin:bottom; animation:yaSeaweed 7s ease-in-out infinite;" viewBox="0 0 40 200" fill="none" stroke="#3f7a3a" stroke-width="6" stroke-linecap="round"><path d="M20 200 C8 150, 32 110, 18 60 C10 30, 24 14, 20 0"/></svg>
     <svg style="position:absolute; bottom:0; left:7%; width:30px; height:150px; transform-origin:bottom; animation:yaSeaweed 8.5s ease-in-out infinite .6s;" viewBox="0 0 30 150" fill="none" stroke="#356b32" stroke-width="5" stroke-linecap="round"><path d="M15 150 C6 110, 24 80, 13 40 C8 22, 18 10, 15 0"/></svg>
     <svg style="position:absolute; bottom:0; right:3%; width:36px; height:180px; transform-origin:bottom; animation:yaSeaweed 7.8s ease-in-out infinite .3s;" viewBox="0 0 36 180" fill="none" stroke="#3f7a3a" stroke-width="6" stroke-linecap="round"><path d="M18 180 C30 135, 8 100, 20 55 C28 28, 14 12, 18 0"/></svg>
@@ -134,7 +126,6 @@
     <div style="position:absolute; top:64%; left:70%; animation:yaTwinkle 6s ease-in-out infinite 1s;"><svg width="8" height="8" viewBox="0 0 10 10"><path d="M5 0l1.2 3.8L10 5 6.2 6.2 5 10 3.8 6.2 0 5l3.8-1.2z" fill="#c8ef94"/></svg></div>
   </div>
 
-  <!-- ============ NAV ============ -->
   <header data-open="{{ menuOpen }}" style="position:sticky; top:0; z-index:30; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); background:rgba(10,18,10,.62); border-bottom:1px solid rgba(168,224,99,.16);">
     <div class="ya-head" style="max-width:1180px; margin:0 auto; padding:14px clamp(16px,4vw,40px); display:flex; align-items:center; justify-content:space-between; gap:16px; position:relative;">
       <div style="display:flex; align-items:center; gap:11px;">
@@ -156,7 +147,6 @@
     </div>
   </header>
 
-  <!-- ============ HERO ============ -->
   <section style="position:relative; z-index:10; max-width:1180px; margin:0 auto; min-height:calc(100vh - 64px); padding:clamp(24px,5vw,60px) clamp(16px,4vw,40px); display:flex; flex-wrap:wrap; align-items:center; gap:clamp(20px,4vw,50px);">
     <div style="flex:1; min-width:280px;">
     <div style="display:inline-flex; align-self:flex-start; align-items:center; gap:8px; padding:7px 16px; border-radius:999px; background:rgba(168,224,99,.1); border:1px solid rgba(168,224,99,.34); margin-bottom:24px;">
@@ -176,7 +166,6 @@
       <svg viewBox="0 0 24 24" style="position:absolute; top:32%; right:-2%; width:clamp(14px,2vw,22px); fill:#f0a04b; filter:drop-shadow(0 0 5px rgba(240,160,75,.7)); animation:yaSparkle 3.4s ease-in-out infinite .7s; z-index:3;"><path d="M12 0c.7 5.6 5.7 10.6 12 11.3-6.3.7-11.3 5.7-12 12-.7-6.3-5.7-11.3-12-12C6.3 10.6 11.3 5.6 12 0z"/></svg>
       <svg viewBox="0 0 24 24" style="position:absolute; bottom:16%; left:-2%; width:clamp(12px,1.6vw,18px); fill:#f5d676; filter:drop-shadow(0 0 5px rgba(245,214,118,.6)); animation:yaSparkle 3.1s ease-in-out infinite 1.3s; z-index:3;"><path d="M12 0c.7 5.6 5.7 10.6 12 11.3-6.3.7-11.3 5.7-12 12-.7-6.3-5.7-11.3-12-12C6.3 10.6 11.3 5.6 12 0z"/></svg>
 
-      <!-- speech bubble (cycles yae voice lines) -->
       <div style="position:absolute; top:-2%; right:-6%; z-index:5; max-width:min(58%,260px);">
         <div ref="{{ heroBubbleRef }}" style="position:relative; background:#f4efe0; color:#2a4a1f; border:2px solid #3a6e2a; border-radius:18px 18px 18px 4px; padding:13px 18px; box-shadow:0 10px 24px rgba(0,0,0,.35); font-family:'Yomogi',cursive; font-size:clamp(13px,1.6vw,16px); line-height:1.55;">
           {{ heroLine }}
@@ -199,15 +188,8 @@
       </div>
     </div>
 
-    <div style="position:absolute; left:50%; bottom:26px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px;">
-      <span style="font-size:10px; letter-spacing:.34em; color:#6f9f5a;">SCROLL</span>
-      <div style="width:20px; height:32px; border:1.5px solid rgba(168,224,99,.45); border-radius:12px; display:flex; justify-content:center; padding-top:6px;">
-        <span style="width:4px; height:7px; border-radius:3px; background:#a8e063; animation:yaScrollDot 1.8s ease-in-out infinite;"></span>
-      </div>
-    </div>
   </section>
 
-  <!-- ============ CONTENT SECTIONS (awaiting original copy) ============ -->
   <main style="position:relative; z-index:10; max-width:1180px; margin:0 auto; padding:0 clamp(16px,4vw,40px) 100px; display:flex; flex-direction:column; gap:clamp(56px,8vw,90px);">
     <section id="profile" style="scroll-margin-top:90px; position:relative; background:#f4efe0; border-radius:26px; padding:clamp(30px,4vw,48px); box-shadow:0 16px 40px rgba(0,0,0,.28);">
       <div style="display:flex; align-items:center; gap:14px; margin-bottom:26px;">
@@ -256,7 +238,6 @@
           <h3 style="margin:0 0 14px; font-family:'Zen Maru Gothic',sans-serif; font-weight:900; font-size:clamp(28px,4.4vw,50px); color:#fff; line-height:1.1;">カワウソ教に<br>入信するだ<span style="color:#a8e063; display:inline-flex; vertical-align:-.08em; margin-left:2px;"><svg viewBox="0 0 24 24" style="width:.8em;height:.8em;fill:currentColor"><path d="M12 21v-8M12 13c0-4.4 3.4-7 8-7 .2 4.8-3 8-8 8zM12 14c0-3.3-2.4-5.6-6-5.6-.2 3.8 2.4 6.1 6 6.1z"/></svg></span></h3>
           <p style="margin:0 auto; max-width:540px; font-size:15px; color:#a9cf87; line-height:1.85; font-family:'Yomogi',cursive;">夢は 全ての民に カワウソの教えを 伝えること。<br>連帯保証人て 書いてある紙を 用意して 待っているだよう<svg viewBox="0 0 24 24" style="width:1.05em;height:1.05em;vertical-align:-.18em;display:inline-block;fill:currentColor;margin-left:3px"><ellipse cx="6" cy="11" rx="2" ry="2.6"/><ellipse cx="12" cy="8.5" rx="2.2" ry="3"/><ellipse cx="18" cy="11" rx="2" ry="2.6"/><path d="M12 12c-3 0-5 2.2-5 4.6 0 1.7 1.4 2.4 3 2.4 1 0 1.4-.4 2-.4s1 .4 2 .4c1.6 0 3-.7 3-2.4 0-2.4-2-4.6-5-4.6z"/></svg></p>
 
-          <!-- legend stats -->
           <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin:36px auto 34px; max-width:780px;">
             <div style="position:relative; flex:1; min-width:200px; background:linear-gradient(160deg,rgba(229,120,36,.14),rgba(255,255,255,.03)); border:1px solid rgba(229,120,36,.4); border-radius:16px; padding:24px 18px;">
               <span style="position:absolute; top:8px; right:10px; font-size:13px; animation:yaSparkle 3s ease-in-out infinite;"><svg viewBox="0 0 24 24" style="width:13px;height:13px;display:block;fill:#f0a04b"><path d="M12 0c.7 5.6 5.7 10.6 12 11.3-6.3.7-11.3 5.7-12 12-.7-6.3-5.7-11.3-12-12C6.3 10.6 11.3 5.6 12 0z"/></svg></span>
@@ -276,7 +257,6 @@
             </div>
           </div>
 
-          <!-- 心得 -->
           <div style="background:rgba(255,255,255,.03); border:1px solid rgba(168,224,99,.16); border-radius:20px; padding:30px 26px; max-width:600px; margin:0 auto 32px; text-align:left;">
             <div style="font-family:'Mochiy Pop One',sans-serif; font-size:13px; color:#9cc23f; letter-spacing:.16em; text-align:center; margin-bottom:18px;">カワウソの民の心得</div>
             <div style="display:flex; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid rgba(168,224,99,.1);"><span style="font-family:'Mochiy Pop One',sans-serif; font-size:18px; color:#a8e063; flex-shrink:0;">一</span><span style="font-size:15px; color:#cfe0c0;">カワウソを 崇めるだ</span></div>
@@ -285,7 +265,6 @@
             <div style="display:flex; align-items:center; gap:14px; padding:13px 0;"><span style="font-family:'Mochiy Pop One',sans-serif; font-size:18px; color:#a8e063; flex-shrink:0;">四</span><span style="font-size:15px; color:#cfe0c0;">布教して カワウソの民を 増やすだ</span></div>
           </div>
 
-          <!-- buttons -->
           <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
             <a href="https://www.youtube.com/@-yotuyayae-9446?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="ya-cta" style="display:inline-flex; align-items:center; gap:9px; padding:15px 32px; border-radius:999px; background:linear-gradient(135deg,#bdee63,#8fce45); color:#1b3209; font-family:'Mochiy Pop One',sans-serif; font-size:15px; box-shadow:0 12px 30px rgba(168,224,99,.3); transition:transform .22s,box-shadow .22s;">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="#1b3209"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6z"/></svg>
@@ -426,16 +405,11 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-  // ┃  ▼▼▼ Googleスプレッドシート連携の設定 ▼▼▼      ┃
-  // ┃  ・スプレッドシートを「ウェブに公開(CSV)」して  ┃
-  // ┃    出てきたURLを下の '' の中に貼るだ           ┃
-  // ┃  ・URLが空のときは、下のSCHEDULE(予備)を表示する ┃
-  // ┃  ・列の順番は  曜日 / 時間 / 内容 / 配信中(○か空) ┃
-  // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+  // 配信予定：スプレッドシート連携の設定 → 使い方は「やえちゃん用 使用ガイド.html」を見てだ
+  // SHEET_CSV_URL に公開CSVのURLを入れると自動で読み込む。空なら下のSCHEDULE(予備)を表示する。
   SHEET_CSV_URL = '';
 
-  // ▼ スプレッドが読めない時に表示する予備の予定だ（普段はさわらなくてOK）
+  // スプレッドが読めない時に表示する予備の予定（普段はさわらなくてOK）
   SCHEDULE = [
     { day: '月', time: '21:00', title: '雑談配信だよう',              live: false },
     { day: '火', time: 'お休み', title: 'ー',                         live: false },
@@ -445,8 +419,6 @@ class Component extends DCLogic {
     { day: '土', time: '21:00', title: 'お楽しみ配信',                live: false },
     { day: '日', time: '未定',  title: '気まぐれ配信だよう',           live: false },
   ];
-
-  // ▲▲▲ 予備の予定はここまで。下はさわらなくてOKだ ▲▲▲
 
   state = { pct: 0, done: false, qi: 0, heroIdx: 0, pats: 0, joy: false, sheet: null, menuOpen: false };
 
@@ -539,7 +511,6 @@ class Component extends DCLogic {
     }
     this.setState((s) => {
       const pats = s.pats + 1;
-      try { localStorage.setItem('yae_pats', String(pats)); } catch (e) {}
       // 撫でるたびに喜び顔に → 連打でタイマーをリセット、止めて3秒で戻す
       clearTimeout(this._joy);
       this._joy = setTimeout(() => this.setState({ joy: false }), 3000);
@@ -548,7 +519,6 @@ class Component extends DCLogic {
   };
   componentDidMount() {
     this.fetchSchedule();
-    try { const p = parseInt(localStorage.getItem('yae_pats') || '0', 10); if (p > 0) this.setState({ pats: p }); } catch (e) {}
     this._hero = setInterval(() => {
       const el = this.heroBubbleRef.current;
       if (el) { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = 'yaBubbleIn .5s ease'; }
