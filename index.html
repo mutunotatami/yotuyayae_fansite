@@ -39,6 +39,7 @@
     @keyframes yaScrollDot { 0%{ transform:translateY(0); opacity:0;} 30%{ opacity:1;} 100%{ transform:translateY(14px); opacity:0;} }
     @keyframes yaFadeUp { from{ opacity:0; transform:translateY(28px);} to{ opacity:1; transform:translateY(0);} }
     @keyframes yaLoadOut { from{ opacity:1; visibility:visible;} to{ opacity:0; visibility:hidden;} }
+    img { -webkit-user-drag:none; -khtml-user-drag:none; -moz-user-drag:none; -o-user-drag:none; user-drag:none; -webkit-touch-callout:none; user-select:none; -webkit-user-select:none; pointer-events:none; }
     @keyframes yaQuotePop { 0%{ transform:scale(.94) rotate(-.6deg); opacity:.35;} 60%{ transform:scale(1.025) rotate(.4deg);} 100%{ transform:scale(1) rotate(0); opacity:1;} }
     @keyframes yaSparkle { 0%,100%{ opacity:.25; transform:scale(.6) rotate(0deg);} 50%{ opacity:1; transform:scale(1) rotate(90deg);} }
     @keyframes yaGoldShine { 0%{ background-position:-120% 0;} 100%{ background-position:220% 0;} }
@@ -518,6 +519,11 @@ class Component extends DCLogic {
     });
   };
   componentDidMount() {
+    if (typeof document !== 'undefined') {
+      this._blockImg = (e) => { if (e.target && e.target.tagName === 'IMG') e.preventDefault(); };
+      document.addEventListener('contextmenu', this._blockImg);
+      document.addEventListener('dragstart', this._blockImg);
+    }
     this.fetchSchedule();
     this._hero = setInterval(() => {
       const el = this.heroBubbleRef.current;
@@ -535,7 +541,13 @@ class Component extends DCLogic {
       });
     }, 230);
   }
-  componentWillUnmount() { clearInterval(this._t); clearInterval(this._hero); clearTimeout(this._joy); }
+  componentWillUnmount() {
+    clearInterval(this._t); clearInterval(this._hero); clearTimeout(this._joy);
+    if (typeof document !== 'undefined' && this._blockImg) {
+      document.removeEventListener('contextmenu', this._blockImg);
+      document.removeEventListener('dragstart', this._blockImg);
+    }
+  }
   renderVals() {
     const pct = Math.round(this.state.pct);
     const quotes = [
